@@ -25,7 +25,7 @@ export PATH=${PATH}:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/pla
 
 ```
 
-Verifiser at du har zipalign og apksigner tilgjenglig i terminalen ved å kjøre `zipalign -h` og `apksigner -h`.
+Verifiser at du har zipalign og apksigner tilgjengelig i terminalen ved å kjøre `zipalign -h` og `apksigner -h`.
 
 Sjekk at du har installert openssl ved å kjøre `openssl version`. Hvis ikke kan du installere via `brew install openssl`.
 
@@ -46,8 +46,8 @@ Kjør opp Burp Suite. Konfigurerer emulatoren til å sende nettverkstrafikk via 
  Nå skal du kunne åpne Chrome og se nettverkstrafikken i Burp Suite. De fleste andre appene på emulatoren vil fortsatt ikke fungere fordi de ikke er konfigurert til å stole på brukerinstallerte sertifikater. Det skal vi fikse i neste steg.
 
 #### Modifiser en app til å godta brukergenererte sertifikater
-- Pakk ut APK-filen itl appen du vil inspsisere med `apktool decode <apk-file>`
-- Åpne mappa som ble laget i den foretrukne IDE, f.eks. Android Studio
+- Pakk ut APK-filen til appen du vil inspisere med `apktool decode <apk-file>`
+- Åpne mappa som ble laget i din foretrukne IDE, f.eks. Android Studio
 - Legg inn [network_security_config.xml](network_security_config.xml) under mappa `res/xml`.
 - Ta i bruk nettverkskonfigurasjonen ved å legge inn `android:networkSecurityConfig="@xml/network_security_config"` som attributt i application-elementet i AndroidManifest.xml. 
 
@@ -62,7 +62,7 @@ Nå har vi oppdatert appen til å godta brukerinstallerte sertifikater. Nå gjen
 
 ### Inspiser koden
 
-Android-kode kompileres til en eksekverbar .dex-fil som pakkes med APK-fila. Det fins flere verktøy for å dekompileres fila tilbake til Java. Et av disse er jadx. Kjør `jadx <apk_file>` for å generere Java-kode basert på innholdet i APK-en. Denne koden sammen med nettverkstrafikken gir ofte et godt innblikk i hva som foregår under panseret til en app.
+Android-kode kompileres til en eksekverbar .dex-fil som pakkes med APK-fila. Det fins flere verktøy for å dekompilere fila tilbake til Java. Et av disse er jadx. Kjør `jadx <apk_file>` for å generere Java-kode basert på innholdet i APK-en. Denne koden sammen med nettverkstrafikken gir ofte et godt innblikk i hva som foregår under panseret til en app.
 
 
 ## Oppgaver
