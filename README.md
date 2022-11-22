@@ -21,7 +21,7 @@ Legg inn følgende i shell-et sin konfigurasjonsfil (.zshrc, .bash-profile e.l.)
 
 ```
 export ANDROID_HOME=/Users/$(whoami)/Library/Android/sdk
-export PATH=${PATH}:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin/:$ANDROID_HOME/build-tools/$(ls | tail -n 1 )/
+export PATH=${PATH}:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin/:$ANDROID_HOME/build-tools/$(ls $ANDROID_HOME/build-tools | tail -n 1 )/
 
 ```
 
