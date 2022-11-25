@@ -69,3 +69,5 @@ Android-kode kompileres til en eksekverbar .dex-fil som pakkes med APK-fila. Det
 
 Velg Android-oppgaver på https://ctf.hacker101.com/ctf
  - H1 Thermostat
+ - Intentional Exercise
+ - Oauthbreaker
